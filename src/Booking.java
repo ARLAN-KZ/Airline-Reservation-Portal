@@ -1,15 +1,21 @@
 public class Booking {
 
-    String bookingNumber;
-    boolean confirmed;
+    private String bookingNumber;
+    private boolean confirmed;
 
     public Booking(String bookingNumber) {
         this.bookingNumber = bookingNumber;
         this.confirmed = false;
     }
 
+    public String getBookingNumber() { return bookingNumber; }
+    public boolean isConfirmed() { return confirmed; }
+
+    public void setBookingNumber(String bookingNumber) { this.bookingNumber = bookingNumber; }
+    public void setConfirmed(boolean confirmed) { this.confirmed = confirmed; }
+
     public void confirmBooking(Flight flight) {
-        if (flight.seats > 0) {
+        if (flight.getSeats() > 0) {
             confirmed = true;
             flight.reduceSeat();
         }
