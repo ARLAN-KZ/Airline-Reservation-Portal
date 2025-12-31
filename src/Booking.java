@@ -1,28 +1,18 @@
-public class Booking {
-
-    private String bookingNumber;
+class Booking {
+    private Passenger passenger;
+    private Flight flight;
     private boolean confirmed;
 
-    public Booking(String bookingNumber) {
-        this.bookingNumber = bookingNumber;
-        this.confirmed = false;
+
+    public Booking(Passenger passenger, Flight flight) {
+        this.passenger = passenger;
+        this.flight = flight;
+        this.confirmed = flight.bookSeat();
     }
 
-    public String getBookingNumber() { return bookingNumber; }
-    public boolean isConfirmed() { return confirmed; }
 
-    public void setBookingNumber(String bookingNumber) { this.bookingNumber = bookingNumber; }
-    public void setConfirmed(boolean confirmed) { this.confirmed = confirmed; }
-
-    public void confirmBooking(Flight flight) {
-        if (flight.getSeats() > 0) {
-            confirmed = true;
-            flight.reduceSeat();
-        }
-    }
-
-    public void showBookingInfo() {
-        System.out.println("Booking number: " + bookingNumber);
-        System.out.println("Confirmed: " + confirmed);
+    @Override
+    public String toString() {
+        return "Booking{passenger=" + passenger.getName() + ", confirmed=" + confirmed + "}";
     }
 }
