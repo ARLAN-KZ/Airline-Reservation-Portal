@@ -1,20 +1,19 @@
-class Passenger extends Person {
-    private String passport;
+public class Passenger {
 
+    private int id;
+    private String fullName;
+    private String passportNumber;
 
-    public Passenger(String name, String passport) {
-        super(name);
-        this.passport = passport;
+    public Passenger(String fullName, String passportNumber) {
+        this.fullName = fullName;
+        this.passportNumber = passportNumber;
     }
 
-
-    public String getPassport() {
-        return passport;
+    public String getFullName() {
+        return fullName;
     }
 
-
-    @Override
-    public String toString() {
-        return "Passenger{name='" + getName() + "', passport='" + passport + "'}";
+    public String getPassportNumber() {
+        return passportNumber;
     }
 }

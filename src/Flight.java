@@ -1,30 +1,31 @@
-class Flight {
-    private String number;
+public class Flight {
+
+    private int id;
+    private String flightNumber;
     private String destination;
+    private String flightDate;
     private int seats;
 
-
-    public Flight(String number, String destination, int seats) {
-        this.number = number;
+    public Flight(String flightNumber, String destination, String flightDate, int seats) {
+        this.flightNumber = flightNumber;
         this.destination = destination;
+        this.flightDate = flightDate;
         this.seats = seats;
     }
 
+    public String getFlightNumber() {
+        return flightNumber;
+    }
 
     public String getDestination() {
         return destination;
     }
 
-
-    public boolean bookSeat() {
-        if (seats > 0) {
-            seats--;
-            return true;
-        }
-        return false;
+    public String getFlightDate() {
+        return flightDate;
     }
-    @Override
-    public String toString() {
-        return "Flight{" + number + ", " + destination + ", seats=" + seats + "}";
+
+    public int getSeats() {
+        return seats;
     }
 }
